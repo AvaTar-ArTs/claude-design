@@ -1,0 +1,177 @@
+<title>AvatarArts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Familjen+Grotesk:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: one loud glitch masthead, then a quiet ruled manifest of universes and a three-step pipeline. */
+:root {
+  --ink: #0f0b16;        /* violet-black ground */
+  --panel: #19131f;      /* raised surface */
+  --line: #34283f;       /* hairlines */
+  --bone: #f3ecf5;       /* primary text */
+  --mute: #a597b0;       /* secondary text */
+  --pink: #ff2e93;       /* the one accent */
+  --pink-soft: #ff7ab8;
+  --f-display: "Rubik Glitch", "Impact", sans-serif;
+  --f-body: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "DM Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.55;
+  padding-inline: 20px;
+  padding-block: 0 56px;
+}
+.wrap { max-width: 980px; margin-inline: auto; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
+
+.bar {
+  display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; align-items: baseline;
+  padding-block: 18px; border-bottom: 1px solid var(--line);
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--mute);
+}
+.bar b { color: var(--pink); font-weight: 500; }
+
+.hero { padding-block: 56px 48px; }
+.hero h1 {
+  font-family: var(--f-display); font-weight: 400;
+  font-size: clamp(3.4rem, 15vw, 9.5rem); line-height: .9; margin: 0 0 24px;
+  letter-spacing: .01em; color: var(--bone);
+  text-shadow: 3px 0 var(--pink), -3px 0 #2fd6ff55;
+  animation: jitter 5s steps(1) infinite;
+}
+@keyframes jitter {
+  0%, 92%, 100% { transform: none; }
+  93% { transform: translate(3px, -1px); }
+  95% { transform: translate(-4px, 1px); }
+  97% { transform: translate(2px, 0); }
+}
+.hero p { max-width: 34em; font-size: 1.25rem; color: var(--bone); margin: 0 0 28px; text-wrap: pretty; }
+.hero p em { font-style: normal; color: var(--pink-soft); }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  font-family: var(--f-mono); font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
+  padding: 14px 20px; text-decoration: none; border: 1px solid var(--pink); color: var(--bone);
+}
+.btn.solid { background: var(--pink); color: var(--ink); font-weight: 500; }
+.btn:hover { background: var(--pink-soft); border-color: var(--pink-soft); color: var(--ink); }
+
+h2 {
+  font-family: var(--f-mono); font-weight: 500; font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--pink); margin: 0 0 20px; text-wrap: balance;
+}
+section { padding-block: 40px; border-top: 1px solid var(--line); }
+
+.list { list-style: none; margin: 0; padding: 0; }
+.row {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr) auto; gap: 8px 28px; align-items: baseline;
+  padding-block: 20px; border-bottom: 1px solid var(--line);
+}
+.row:first-child { padding-top: 0; }
+.row h3 { margin: 0; font-size: 1.5rem; font-weight: 700; line-height: 1.15; text-wrap: balance; }
+.row p { margin: 0; color: var(--mute); min-width: 0; }
+.tag {
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  padding: 4px 9px; border: 1px solid var(--line); color: var(--mute); white-space: nowrap;
+}
+.tag.pod { border-color: var(--pink); color: var(--pink-soft); }
+.row:hover h3 { color: var(--pink-soft); }
+
+.flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.step { background: var(--panel); padding: 22px; min-width: 0; }
+.step span { font-family: var(--f-mono); font-size: 12px; color: var(--pink); letter-spacing: .12em; text-transform: uppercase; }
+.step h3 { margin: 8px 0; font-size: 1.25rem; }
+.step p { margin: 0; color: var(--mute); font-size: .95rem; }
+
+footer {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
+  padding-top: 28px; border-top: 1px solid var(--line);
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em; color: var(--mute);
+}
+
+@media (max-width: 700px) {
+  .row { grid-template-columns: 1fr; }
+  .tag { justify-self: start; }
+  .flow { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .hero h1 { animation: none; } }
+</style>
+
+<div class="wrap">
+  <header class="bar">
+    <span><b>AvatarArts</b>.org</span>
+    <span>Punk / glitch / print-ready</span>
+  </header>
+
+  <div class="hero">
+    <h1>Avatar<br>Arts</h1>
+    <p>Characters born in the sewers of the internet. <em>Sammy the TrashCat</em> and the rest of the crew, generated, curated, and printed on things you can hold.</p>
+    <div class="cta">
+      <a class="btn solid" href="#universes">Meet the universes</a>
+      <a class="btn" href="#pipeline">How it gets made</a>
+    </div>
+  </div>
+
+  <section id="universes">
+    <h2>Five universes</h2>
+    <ul class="list">
+      <li class="row">
+        <h3>TrashCats &amp; Raccoon</h3>
+        <p>Alley royalty. Scavenger cats and one very opinionated raccoon, drawn in hot pink and bin-lid chrome.</p>
+        <span class="tag pod">POD-ready</span>
+      </li>
+      <li class="row">
+        <h3>Spores of Truth</h3>
+        <p>Mushroom cults, glitching signal, and fungal oracles that only tell you the thing you were avoiding.</p>
+        <span class="tag pod">POD-ready</span>
+      </li>
+      <li class="row">
+        <h3>Howling Cat</h3>
+        <p>One cat, one moon, no volume control. The loudest silhouette in the set.</p>
+        <span class="tag pod">POD-ready</span>
+      </li>
+      <li class="row">
+        <h3>The Sewers</h3>
+        <p>The shared underworld the others crawl through. Pipes, neon runoff, and background lore.</p>
+        <span class="tag">Worldbuilding</span>
+      </li>
+      <li class="row">
+        <h3>ESO</h3>
+        <p>Fan art and game-world studies from Tamriel, kept in their own lane.</p>
+        <span class="tag">Studies</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="pipeline">
+    <h2>From prompt to product</h2>
+    <div class="flow">
+      <div class="step">
+        <span>Step one</span>
+        <h3>Generate</h3>
+        <p>Image models run through a FAL pipeline, with prompts tuned per universe so each keeps its own look.</p>
+      </div>
+      <div class="step">
+        <span>Step two</span>
+        <h3>Curate</h3>
+        <p>Keep the pieces with a clear silhouette and clean edges. Everything else goes back in the bin.</p>
+      </div>
+      <div class="step">
+        <span>Step three</span>
+        <h3>Print</h3>
+        <p>Approved art ships as print-on-demand: tees, stickers, posters, mugs.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>AvatarArts.org</span>
+    <span>Sample layout. Swap in real art and copy.</span>
+  </footer>
+</div>
